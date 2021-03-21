@@ -13,28 +13,28 @@ import org.springframework.stereotype.Component;
 @Component
 public class ConstantPropertiesUtils implements InitializingBean {
 
-    //读取配置文件内容 spring中value注解属性注入注解
-    @Value("oss-cn-beijing.aliyuncs.com")
+    //读取配置文件内容
+    @Value("${aliyun.oss.file.endpoint}")
     private String endpoint;
 
-    @Value("LTAI4G4SswUVQrwQWf1iAPkV")
+    @Value("${aliyun.oss.file.keyid}")
     private String keyId;
 
-    @Value("OlFIx1j2OaIJ4DYvb9c60QL05fopAF")
+    @Value("${aliyun.oss.file.keysecret}")
     private String keySecret;
 
-    @Value("edu-a1010")
+    @Value("${aliyun.oss.file.bucketname}")
     private String bucketName;
 
-
-    //定义公共静态常量
-    public static String END_POINT;
+    //定义公开静态常量
+    public static String END_POIND;
     public static String ACCESS_KEY_ID;
     public static String ACCESS_KEY_SECRET;
     public static String BUCKET_NAME;
+
     @Override
     public void afterPropertiesSet() throws Exception {
-        END_POINT = endpoint;
+        END_POIND = endpoint;
         ACCESS_KEY_ID = keyId;
         ACCESS_KEY_SECRET = keySecret;
         BUCKET_NAME = bucketName;

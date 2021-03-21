@@ -1,4 +1,4 @@
-package com.atguigu.scheduleservice.entity;
+package com.atguigu.eduservice.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -15,54 +15,38 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 维修单
+ * 课程
  * </p>
  *
  * @author AndrewBar
- * @since 2021-01-03
+ * @since 2021-01-12
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="EduSchedule对象", description="维修单")
-public class EduSchedule implements Serializable {
+@ApiModel(value="EduChapter对象", description="课程")
+public class EduChapter implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "编号")
+    @ApiModelProperty(value = "章节ID")
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
 
-    @ApiModelProperty(value = "维修单编号")
-    private String repairId;
+    @ApiModelProperty(value = "课程ID")
+    private String courseId;
 
-    @ApiModelProperty(value = "设备编号")
-    private String devId;
-
-    @ApiModelProperty(value = "设备优先级")
-    private String devPriority;
-
-    @ApiModelProperty(value = "订单编号")
-    private String orderId;
-
-    @ApiModelProperty(value = "订单优先级")
-    private String orderPriority;
-
-    @ApiModelProperty(value = "维修状态")
-    private String process;
+    @ApiModelProperty(value = "章节名称")
+    private String title;
 
     @ApiModelProperty(value = "显示排序")
     private Integer sort;
-
-    @ApiModelProperty(value = "报修时间")
-    @TableField(fill = FieldFill.INSERT)
-    private Date gmtSubmit;
 
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
 
-    @ApiModelProperty(value = "修改时间")
+    @ApiModelProperty(value = "更新时间")
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date gmtModified;
 

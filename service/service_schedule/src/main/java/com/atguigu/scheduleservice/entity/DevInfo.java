@@ -15,48 +15,44 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 维修单
+ * 
  * </p>
  *
  * @author AndrewBar
- * @since 2021-01-03
+ * @since 2021-03-04
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="EduSchedule对象", description="维修单")
-public class EduSchedule implements Serializable {
+@ApiModel(value="DevInfo对象", description="")
+public class DevInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "编号")
+    @ApiModelProperty(value = "id")
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
 
-    @ApiModelProperty(value = "维修单编号")
-    private String repairId;
+    @ApiModelProperty(value = "设备名称")
+    private String devName;
 
-    @ApiModelProperty(value = "设备编号")
+    @ApiModelProperty(value = "设备ID")
     private String devId;
 
-    @ApiModelProperty(value = "设备优先级")
-    private String devPriority;
+    @ApiModelProperty(value = "设备类型")
+    private String model;
 
-    @ApiModelProperty(value = "订单编号")
-    private String orderId;
+    @ApiModelProperty(value = "所属工段")
+    private String pro;
 
-    @ApiModelProperty(value = "订单优先级")
-    private String orderPriority;
+    @ApiModelProperty(value = "设备状态")
+    private Integer state;
 
-    @ApiModelProperty(value = "维修状态")
-    private String process;
+    @ApiModelProperty(value = "设备等级1重要2")
+    private Integer level;
 
-    @ApiModelProperty(value = "显示排序")
-    private Integer sort;
-
-    @ApiModelProperty(value = "报修时间")
-    @TableField(fill = FieldFill.INSERT)
-    private Date gmtSubmit;
+    @ApiModelProperty(value = "逻辑删除 1（true）已删除， 0（false）未删除")
+    private Boolean isDeleted;
 
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)

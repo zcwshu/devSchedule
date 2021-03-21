@@ -1,7 +1,10 @@
 package com.atguigu.scheduleservice.service;
 
 import com.atguigu.scheduleservice.entity.EduSchedule;
+import com.atguigu.scheduleservice.entity.vo.ScheduleQuery;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface EduScheduleService extends IService<EduSchedule> {
 
+    List<String> getPSOResult(ScheduleQuery scheduleQuery);
 }

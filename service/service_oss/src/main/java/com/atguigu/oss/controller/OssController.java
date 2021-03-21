@@ -20,7 +20,6 @@ public class OssController {
 
     @Autowired
     private OssService ossService;
-
     //上传头像的方法
     @PostMapping
     public Ret uploadOssFile(MultipartFile file) {
